@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+    <title>这是普通的post请求</title>
+
+</head>
+
+<body>
+
+<div>
+
+    <p>Post请求响应：</p>
+
+    <p th:text="${response}"></p>
+
+    <p th:text="${post111}"></p>
+
+    <h3>post请求</h3>
+
+    1、使用表单发送post请求：html不支持通过链接发送post请求，只能通过表单方式发送。
+
+    <form method="POST" th:action="@{/starve/echo}">
+
+        <input type="text" name="name" id="nameId"/>
+
+        <button type="submit" name="submit" value="value" class="button">发起普通post请求</button>
+
+    </form>
+
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>

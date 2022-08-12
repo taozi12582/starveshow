@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: starveshow
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+
+server:
+  port: 8080
+
+centos:
+  ip: 81.70.192.102
+  name: root
+  keyPath: D:\office_tool\x_product\taozi.taozi
+  port: 22
