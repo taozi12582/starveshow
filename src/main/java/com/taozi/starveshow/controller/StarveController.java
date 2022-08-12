@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-//@RequestMapping("/starve")
+@RequestMapping("/starve")
 public class StarveController {
 
     @Autowired
@@ -38,24 +38,13 @@ public class StarveController {
         return "echo.html";
     }
 
-    @PostMapping("/echo1")
-    public String test(Model model, HashMap<String, Object> map, @RequestParam(value = "name", required = false, defaultValue = "猫了个咪") String name) {
-        model.addAttribute("response", name);
-        model.addAttribute("post111", "我是post方法");
-        return "echo1";
-    }
-
-    @GetMapping("/hello1")
-    public String hello(Map<String, Object> map) {
-        //通过 map 向前台页面传递数据
-        map.put("name", "编程帮（www.biancheng.net）");
-        return "hello";
-    }
-
-    @GetMapping("index")//页面的url地址
-    public String getindex(Model model)//对应函数
-    {
-        model.addAttribute("name","bigsai");
-        return "/index";//与templates中index.html对应
+    @PostMapping("/echo")
+    @ResponseBody
+    public String test(Model model, @RequestParam(value = "name", required = false, defaultValue = "猫了个咪") String name) {
+//        model.addAttribute("response", name);
+//        model.addAttribute("post111", "我是post方法");
+        System.out.println(model.getAttribute("name"));
+        System.out.println(name);
+        return null;
     }
 }
