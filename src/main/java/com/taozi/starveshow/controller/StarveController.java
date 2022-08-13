@@ -47,4 +47,11 @@ public class StarveController {
         System.out.println(name);
         return null;
     }
+
+    @PostMapping("/test")
+    @ResponseBody
+    public String test2() {
+        System.out.println("2222222");
+        return null;
+    }
 }

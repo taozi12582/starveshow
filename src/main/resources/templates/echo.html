@@ -21,7 +21,7 @@
 <!--&lt;!&ndash;            <button th:onclick="getName1()">开服</button>&ndash;&gt;-->
 <!--        </div>-->
         <div>
-            <button th:onclick="${@module.test2()}">关服</button>
+            <button th:onclick="getName2()">关服</button>
         </div>
         <div>
             <button th:onclick="${@module.test3()}">下载mod</button>
@@ -34,9 +34,19 @@
 </form>-->
 
 </body>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <script>
     function getName2(){
-       alert("222");
+        $.ajax({
+            url:"/starve/test",
+            type:"POST",
+            // data:JSON.stringify(product),
+            contentType: "application/json;charset=UTF-8",
+            accept : "*/*",
+            success : function () {
+                console.log("Successfully");
+            }
+        });
     }
     function getName3(){
         alert("333");
