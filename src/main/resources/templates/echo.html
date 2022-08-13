@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>首页</title>
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/style.css" th:href="@{/css/style.css}"/>
-<!--    <script type="text/javascript" src="/static/js/thymeleaf.js" th:src="@{/static/js/thymeleaf.js}"></script>-->
+    <!--    <script type="text/javascript" src="/static/js/thymeleaf.js" th:src="@{/static/js/thymeleaf.js}"></script>-->
     <script>
         testFunction();
     </script>
@@ -14,28 +14,36 @@
 
 <body th:style="'background-image: url(/img/starve.jpg)'">
 
-    <div class="parent">
-        <div class="container">
-            <div>
-                <button>开服</button>
-            </div>
-            <div>
-                <button>关服</button>
-            </div>
-            <div>
-                <button>下载mod</button>
-            </div>
+<div class="parent">
+    <div class="container">
+<!--        <div>-->
+<!--            <button th:onclick="${@module.startServer()}">开服</button>-->
+<!--&lt;!&ndash;            <button th:onclick="getName1()">开服</button>&ndash;&gt;-->
+<!--        </div>-->
+        <div>
+            <button th:onclick="${@module.test2()}">关服</button>
+        </div>
+        <div>
+            <button th:onclick="${@module.test3()}">下载mod</button>
         </div>
     </div>
-    <!--<form method="POST" th:action="@{/starve/echo}">
-        <input type="text" name="name" id="nameId"/>
-        <button type="submit" name="submit" value="value" class="button">发起普通post请求</button>
-    </form>-->
-
-<script>
-
-</script>
+</div>
+<!--<form method="POST" th:action="@{/starve/echo}">
+    <input type="text" name="name" id="nameId"/>
+    <button type="submit" name="submit" value="value" class="button">发起普通post请求</button>
+</form>-->
 
 </body>
+<script>
+    function getName2(){
+       alert("222");
+    }
+    function getName3(){
+        alert("333");
+    }
+    function getName1(){
+        alert("111");
+    }
+</script>
 
 </html>

@@ -1,10 +1,13 @@
 package com.taozi.starveshow.util;
 
 import com.jcraft.jsch.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.PrintStream;
 import java.util.Properties;
 
 public class CentosUtil {
+
     public static Session getSessionAndConnect(String keyPath, String ip, String name, int port){
         Session session = null;
         JSch jSch = new JSch();
