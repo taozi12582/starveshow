@@ -5,25 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <link rel="stylesheet" type="text/css" media="all" href="/templates/css/style.css" th:href="@{/templates/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/style.css" th:href="@{/css/style.css}"/>
 <!--    <script type="text/javascript" src="/static/js/thymeleaf.js" th:src="@{/static/js/thymeleaf.js}"></script>-->
     <script>
         testFunction();
     </script>
 </head>
 
-<body>
+<body th:style="'background-image: url(/img/starve.jpg)'">
 
     <div class="parent">
         <div class="container">
             <div>
-                <button>按钮1</button>
+                <button>开服</button>
             </div>
             <div>
-                <button>按钮2</button>
+                <button>关服</button>
             </div>
             <div>
-                <button>按钮3</button>
+                <button>下载mod</button>
             </div>
         </div>
     </div>
