@@ -26,6 +26,9 @@
             <button th:onclick="downloadMods()">下载mod</button>
         </div>
     </div>
+    <div class="display">
+        <textarea id="text"></textarea>
+    </div>
 </div>
 <!--<form method="POST" th:action="@{/starve/echo}">
     <input type="text" name="name" id="nameId"/>
@@ -60,6 +63,24 @@
             }
         });
     }
+</script>
+<script>
+    var myFunc = function(){
+        $.ajax({
+            url:"/starve/getConsole",
+            type:"POST",
+            data:String,
+            contentType: "application/json;charset=UTF-8",
+            accept : "*/*",
+            success : function (res) {
+                console.log(res);
+                document.getElementById('text').innerHTML += res;
+            }
+        });
+        var obj = document.getElementById('text');
+        obj.scrollTop = obj.scrollHeight;
+    }
+    setInterval(myFunc,1000)
 </script>
 
 </html>

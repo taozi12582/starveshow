@@ -5,6 +5,8 @@ import com.jcraft.jsch.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 @Controller
@@ -17,6 +19,8 @@ public class StarveController {
     private Channel channel;
     @Autowired
     private PrintStream commander;
+    @Autowired
+    private ByteArrayOutputStream os;
 
     @RequestMapping("/op")
     public String t1() {
@@ -36,5 +40,13 @@ public class StarveController {
         commander.println("c_shutdown()");
         commander.println("c_shutdown()");
         return null;
+    }
+
+    @PostMapping("/getConsole")
+    @ResponseBody
+    public String getConsole(){
+        String s = os.toString();
+        os.reset();
+        return s;
     }
 }
