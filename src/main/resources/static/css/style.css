@@ -23,7 +23,7 @@ body{
 .container button{
     width: 40%;
     height: 30%;
-    font-size:80px;
+    font-size:3vw;
     border-width: 0px; /* 边框宽度 */
     border-radius: 3px; /* 边框半径 */
     /*background: #1E90FF; !* 背景颜色 *!*/

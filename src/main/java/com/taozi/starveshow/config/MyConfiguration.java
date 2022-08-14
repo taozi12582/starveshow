@@ -39,6 +39,7 @@ public class MyConfiguration {
         PrintStream commander = new PrintStream(inputstream_for_the_channel, true);
         channel.setOutputStream(System.out, true);
         channel.connect();
+        commander.println("su steam");
         return commander;
     }
 }

@@ -16,15 +16,14 @@
 
 <div class="parent">
     <div class="container">
-<!--        <div>-->
-<!--            <button th:onclick="${@module.startServer()}">开服</button>-->
-<!--&lt;!&ndash;            <button th:onclick="getName1()">开服</button>&ndash;&gt;-->
-<!--        </div>-->
         <div>
-            <button th:onclick="getName2()">关服</button>
+            <button th:onclick="startServer()">开服</button>
         </div>
         <div>
-            <button th:onclick="${@module.test3()}">下载mod</button>
+            <button th:onclick="shutdownServer()">关服</button>
+        </div>
+        <div>
+            <button th:onclick="downloadMods()">下载mod</button>
         </div>
     </div>
 </div>
@@ -36,23 +35,30 @@
 </body>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <script>
-    function getName2(){
+    function startServer(){
         $.ajax({
-            url:"/starve/test",
+            url:"/starve/startServer",
             type:"POST",
             // data:JSON.stringify(product),
             contentType: "application/json;charset=UTF-8",
             accept : "*/*",
             success : function () {
-                console.log("Successfully");
+                console.log("startServer");
             }
         });
     }
-    function getName3(){
-        alert("333");
-    }
-    function getName1(){
-        alert("111");
+
+    function shutdownServer() {
+        $.ajax({
+            url:"/starve/shutdownServer",
+            type:"POST",
+            // data:JSON.stringify(product),
+            contentType: "application/json;charset=UTF-8",
+            accept : "*/*",
+            success : function () {
+                console.log("shutdownServer");
+            }
+        });
     }
 </script>
 
