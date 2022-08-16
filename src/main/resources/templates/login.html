@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/login.css}"/>
+</head>
+
+<body th:style="'background-image: url(/img/starve.jpg)'">
+
+<div class="parent">
+    <div class="container">
+        <form action="/starve/loginHandle"  method="post" onsubmit="return checkform();">
+            <p>最胖的人</p>
+            <input type="text" name="answer" class="typeIn" id="submit"><br>
+            <input type="submit" value="验证" class="btn">
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    function checkform() {
+        var item = document.getElementById("submit");
+        var value = item.value;
+        // alert(value);
+        if(value == null || value === ""){
+            alert("输入不能为空")
+            return false;
+        } else if("边浩" === value){
+            return true;
+        }else {
+            alert("答案错误");
+            item.value = '';
+            return false;
+        }
+    }
+</script>
+</html>

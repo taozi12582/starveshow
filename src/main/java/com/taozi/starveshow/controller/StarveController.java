@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayOutputStream;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 
 @Controller
@@ -53,32 +55,16 @@ public class StarveController {
         return s;
     }
 
-    @PostMapping("/downloadMods")
-    public void downloadMods(HttpServletResponse response) throws Exception {
-        String codedFileName = "EN";
-        response.setHeader("Content-Disposition", "attachment;filename=" +             codedFileName + ".xml");
-        // 响应类型,编码
-        response.setContentType("application/octet-stream;charset=UTF-8");
-        // 形成输出流
-        OutputStream osOut = response.getOutputStream();
-//        File xmlFileC = new
-//                File("/databaseclient/src/main/resources/Files/EN2.xml");
-        ChannelSftp channel = (ChannelSftp) session.openChannel("sftp");
-        channel.connect();
-        String remoteFile = "/home/steam/Steam/steamapps/common/Don't Starve Together Dedicated Server/mods.zip";
-        InputStream input = channel.get(remoteFile);
-//        InputStream input = null;
-        try {
-//            input = new FileInputStream(xmlFileC);
-            byte[] buf = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = input.read(buf)) > 0) {
-                osOut.write(buf, 0, bytesRead);
-            }
-        } finally {
-            input.close();
-            osOut.close();
-        }
+    @GetMapping("/login")
+    public String login(){
+        return "login.html";
+    }
+
+    @PostMapping ("/loginHandle")
+    public String loginHandle(HttpServletRequest request){
+        HttpSession sessoin=request.getSession();
+        sessoin.setAttribute("flag","allow");
+        return "echo.html";
     }
 
 }
