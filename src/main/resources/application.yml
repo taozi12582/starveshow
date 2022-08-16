@@ -14,5 +14,5 @@ server:
 centos:
   ip: 81.70.192.102
   name: root
-  keyPath: src\main\resources\taozi.taozi
+  keyPath: taozi.taozi
   port: 22

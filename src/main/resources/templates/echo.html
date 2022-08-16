@@ -7,9 +7,7 @@
     <title>首页</title>
     <link rel="stylesheet" type="text/css" media="all" href="/static/css/style.css" th:href="@{/css/style.css}"/>
     <!--    <script type="text/javascript" src="/static/js/thymeleaf.js" th:src="@{/static/js/thymeleaf.js}"></script>-->
-    <script>
-        testFunction();
-    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 
 <body th:style="'background-image: url(/img/starve.jpg)'">
@@ -24,7 +22,9 @@
         </div>
         <div>
             <button th:onclick="downloadMods()">下载mod</button>
-            <a href="http://localhost:8080/mods.zip" download="http://localhost:8080/mods.zip" target="view_window" id="download"></a>
+            <!--/home/steam/Steam/steamapps/common/Don\'t\ Starve\ Together\ Dedicated\ Server/
+-->
+            <a href="http://81.70.192.102:8080/mods.zip" download="http://81.70.192.102:8080/mods.zip" target="view_window" id="download"></a>
         </div>
     </div>
     <div class="display">
