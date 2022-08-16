@@ -24,6 +24,7 @@
         </div>
         <div>
             <button th:onclick="downloadMods()">下载mod</button>
+            <a href="http://localhost:8080/mods.zip" download="http://localhost:8080/mods.zip" target="view_window" id="download"></a>
         </div>
     </div>
     <div class="display">
@@ -36,7 +37,7 @@
 </form>-->
 
 </body>
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<!--<script type="text/javascript" src="http://localhost:8080/upload/user.png"></script>-->
 <script>
     function startServer(){
         $.ajax({
@@ -62,6 +63,11 @@
                 console.log("shutdownServer");
             }
         });
+    }
+
+    function downloadMods() {
+        var a = document.getElementById("download");
+        a.click();
     }
 </script>
 <script>
