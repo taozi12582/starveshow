@@ -11,7 +11,7 @@ body {
     /*background-color: #fff;*/
     border-radius: 20px;
     width: 50%;
-    height: 50%;
+    height: 60%;
     margin: auto;
     position: absolute;
     top: 0;
@@ -51,6 +51,6 @@ body {
     border-width: 2px; /* 边框宽度 */
     border-radius: 10px; /* 边框半径 */
     width: 20%;
-    height: 10%;
+    height: 30%;
     font-size: 1.5vw;
 }
