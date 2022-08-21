@@ -70,7 +70,7 @@ public class StarveController {
     @PostMapping("/updateServer")
     @ResponseBody
     public String updateServer(){
-        commander.println("/home/steam/steamcmd/steamcmd.sh +login 2678163926 Tzx14726174876  +app_update 343050 validate +quit");
+        commander.println("~/updateDST.sh");
         return null;
     }
 
