@@ -12,7 +12,7 @@ public class WebConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyInterceptor())
-                .excludePathPatterns("/starve/login","/starve/loginHandle","/starve/getConsole","/css/**","/img/**")
+                .excludePathPatterns("/starve/login","/starve/loginHandle","/starve/getConsole","/starve/respawn","/css/**","/img/**")
                 .addPathPatterns("/**");
     }
 }

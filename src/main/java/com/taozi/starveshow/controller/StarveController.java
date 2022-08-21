@@ -74,4 +74,12 @@ public class StarveController {
         return null;
     }
 
+    @GetMapping("/respawn")
+    @ResponseBody
+    public String respawn(String name){
+        commander.println("UserToPlayer("+name+"):PushEvent('respawnfromghost')");
+        System.out.println("复活"+name);
+        return name;
+    }
+
 }

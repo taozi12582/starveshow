@@ -15,6 +15,9 @@
 <div class="parent">
     <div class="container">
         <div>
+            <button th:onclick="respawn()">复活指定玩家</button>
+        </div>
+        <div>
             <button th:onclick="updateServer()">更新服务器</button>
         </div>
         <div>
@@ -42,6 +45,22 @@
 </body>
 <!--<script type="text/javascript" src="http://localhost:8080/upload/user.png"></script>-->
 <script>
+    function respawn(){
+        var name = prompt("请输入要复活的玩家名称","边浩");
+        excuteRescue(name)
+
+    }
+    
+    function excuteRescue(name) {
+        $.ajax({
+            url:"/starve/respawn?name="+name,
+            type: "get", // 以get方式发起请求
+            success : function (data) {
+                console.log("复活玩家"+name);
+            }
+        });
+    }
+
     function updateServer(){
         $.ajax({
             url:"/starve/updateServer",
